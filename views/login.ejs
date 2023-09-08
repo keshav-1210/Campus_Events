@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+   
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   
+    <style>
+        
+  @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&family=Oswald:wght@200&family=Roboto+Slab:wght@400;600&family=Rubik+Pixels&family=Space+Grotesk:wght@500&display=swap');
+
+        body {
+            background-image: url("/darkback.jpg");
+        position: static;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        
+        }
+        
+        .login-form {
+            background: linear-gradient(166deg, rgba(217, 217, 217, 0.60) 20%, rgba(217, 217, 217, 0.20) 90%);
+    box-shadow: 14px 10px 24px -1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    border-radius: 10%;
+    border: 0px;
+            padding: 20px;
+            height: fit-content;
+           
+            
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input{
+        background-color: rgb(110, 107, 107);
+    
+    border: 0px;
+        }
+        .admin-label {
+            display: none;
+        }
+        h1{
+            color: azure;
+            font-family: 'Bricolage Grotesque', sans-serif;
+
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center justify-content-center mb-5 " id="element">   </h1>
+     
+        <div style="position:-webkit-sticky " class="row justify-content-center">
+            <div class="col-md-6">
+                <div   class="login-form">
+                    
+                    <h2 class="text-center">LOGIN</h2>
+                    <form  action="/home" method="POST">
+                        <div class="row ">
+                        <div class="form-check col text-center ">
+                            <input type="radio" class="form-check-input" id="admin" name="userType" value="admin" onclick="showAdminLabel()">
+                            <label class="form-check-label" for="admin">Admin</label>
+                        </div>
+                        <div class="form-check  col text-center ">
+                            <input type="radio" class="form-check-input" id="non-admin" name="userType" value="non-admin" onclick="hideAdminLabel()">
+                            <label class="form-check-label" for="non-admin">Non-Admin</label>
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <label for="username" id="username-label">Username:</label>
+                            <input  type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" >Login</button>
+                        </form>
+                        <div class="text-center mt-2 mb-2"> OR</div>
+                        <div id="buttonDiv"></div>
+                       
+                       
+  
+
+                        
+ 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['Explore exciting Events!!'],
+          typeSpeed: 50,
+          backSped:1150,
+          loop:true
+        });
+      </script>
+      <script src="https://accounts.google.com/gsi/client" async defer></script>
+      <script>
+        function handleCredentialResponse(response) {
+          console.log("Encoded JWT ID token: " + response.credential);
+        }
+        window.onload = function () {
+          google.accounts.id.initialize({
+            client_id: "YOUR_GOOGLE_CLIENT_ID",
+            callback: handleCredentialResponse
+          });
+          google.accounts.id.renderButton(
+            document.getElementById("buttonDiv"),
+            { theme: "outline", size: "large" }  
+          );
+          google.accounts.id.prompt();
+        }
+    </script>
+    
+    <script>
+        function showAdminLabel() {
+            document.getElementById('username-label').innerText = 'Admin ID:';
+        }
+
+        function hideAdminLabel() {
+            document.getElementById('username-label').innerText = 'Username:';
+        }
+    </script>
+                       
+</body>
+</html>

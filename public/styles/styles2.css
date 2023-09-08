@@ -1,0 +1,69 @@
+body{
+        background-image: url("/darkback.jpg");
+        position: static;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+       
+        
+
+    
+}
+nav{
+    background-color :black;
+    color: white;
+
+}
+
+#superbody{
+    display: flex;
+    position: relative;
+    
+}
+#mainbody{
+    width: auto
+
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 75vh;
+    position: static;
+   margin-left: auto;
+}
+
+.flex2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    width: 100%;
+}
+#card{
+    background: linear-gradient(166deg, rgba(217, 217, 217, 0.722) 90%, rgba(217, 217, 217, 0.20) 30%);
+    box-shadow: 14px 10px 24px -1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    
+    border-radius: 10%;
+    border: 0px;
+    
+}
+#card img{
+    border-radius: 10%;
+}
+
+@media (max-width: 1000px){
+    .flex{
+       
+        flex-direction: column;
+        height: auto;
+    } 
+    #card{
+        width: 100%;
+    }
+}
